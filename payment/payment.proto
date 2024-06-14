@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package="github.com/az58740/grpc-microservices-proto/payment";
+
+package payment;
+
+message CreatePaymentRequest {
+	float price = 1;
+}
+
+message CreatePaymentResponse {
+	int64 bill_id = 1;
+}
+
+service PaymentService {
+    rpc Create(CreatePaymentRequest) returns (CreatePaymentResponse) {}
+}
+
